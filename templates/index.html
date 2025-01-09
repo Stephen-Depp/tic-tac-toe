@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <h1>Tic-Tac-Toe</h1>
+    <!-- Current Player Display -->
+    <div id="current-player" style="margin: 10px; font-weight: bold">
+      Current Player: X
+    </div>
+
+    <div id="game-board">
+      <div class="row">
+        <div class="cell" data-cell="0"></div>
+        <div class="cell" data-cell="1"></div>
+        <div class="cell" data-cell="2"></div>
+      </div>
+      <div class="row">
+        <div class="cell" data-cell="3"></div>
+        <div class="cell" data-cell="4"></div>
+        <div class="cell" data-cell="5"></div>
+      </div>
+      <div class="row">
+        <div class="cell" data-cell="6"></div>
+        <div class="cell" data-cell="7"></div>
+        <div class="cell" data-cell="8"></div>
+      </div>
+      <div id="win-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <p id="win-message"></p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="game-mode">Select Game Mode:</label>
+      <select id="game-mode" onchange="startNewGame(this.value)">
+        <option value="easy">Easy Mode</option>
+        <option value="average">Average Mode</option>
+        <option value="impossible">Impossible Mode</option>
+        <option value="friend">Play with Friend</option>
+      </select>
+    </div>
+    <div id="restart-container" style="margin-top: 20px; text-align: center">
+      <button onclick="restartGame()">Restart Game</button>
+    </div>
+    <script src="/static/scripts.js"></script>
+  </body>
+</html>
