@@ -1,5 +1,0 @@
-Stephen-Depp
-git remote add origin https://github.com/Stephen-Depp/tic-tac-toe.git
-
-
-token access the tic tac toe : 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
