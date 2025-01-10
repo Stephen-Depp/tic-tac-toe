@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="/static/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      #game-board {
+        margin-top: 20px; /* Add margin to create space */
+        position: relative; /* Ensure the modal is positioned relative to the game board */
+      }
+
+      .modal {
+        display: none; /* Hidden by default */
+        position: absolute; /* Stay in place within the game board */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width of the game board */
+        height: 100%; /* Full height of the game board */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto; /* Centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: auto; /* Adjust width to fit content */
+        height: auto; /* Adjust height to fit content */
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the content */
+        border-radius: 5px; /* Add border radius */
+      }
+    </style>
   </head>
   <body>
     <h1>Tic-Tac-Toe</h1>
@@ -30,14 +67,13 @@
         <div class="cell" data-cell="8"></div>
       </div>
       <div id="win-modal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content" style="width: auto; height: auto">
           <p id="win-message"></p>
         </div>
       </div>
     </div>
     <div>
-      <label for="game-mode">Select Game Mode:</label>
+      <label id="game-mode" for="game-mode">Select Game Mode:</label>
       <select id="game-mode" onchange="startNewGame(this.value)">
         <option value="easy">Easy Mode</option>
         <option value="average">Average Mode</option>
@@ -48,6 +84,58 @@
     <div id="restart-container" style="margin-top: 20px; text-align: center">
       <button onclick="restartGame()">Restart Game</button>
     </div>
+    <footer style="text-align: center; margin-top: 20px">
+      &copy; 2025. Powered by Hokleng.
+      <div style="margin-top: 10px">
+        <a
+          href="https://www.facebook.com/profile.php?id=100024111951073"
+          target="_blank"
+          style="margin: 0 15px"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/@koyhokleng4060"
+          target="_blank"
+          style="margin: 0 15px"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a
+          href="https://www.tiktok.com/@hongleng007?lang=en"
+          target="_blank"
+          style="margin: 0 15px"
+          ><i class="fab fa-tiktok"></i
+        ></a>
+        <a href="mailto:honglengpes7@gmail.com" style="margin: 0 15px"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </div>
+    </footer>
     <script src="/static/scripts.js"></script>
+    <style>
+      .modal {
+        display: none; /* Hidden by default */
+        position: absolute; /* Stay in place within the game board */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width of the game board */
+        height: 100%; /* Full height of the game board */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto; /* Centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: auto; /* Adjust width to fit content */
+        height: auto; /* Adjust height to fit content */
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the content */
+      }
+    </style>
   </body>
 </html>

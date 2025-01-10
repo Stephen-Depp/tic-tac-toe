@@ -19,6 +19,18 @@ function restartGame() {
   startNewGame(currentMode);
 }
 
+// Handle game over
+function handleGameOver(winner) {
+  const winMessage = winner === "draw" ? "It's a draw!" : ` ${winner} wins!`;
+  document.getElementById("win-message").textContent = winMessage;
+  const winModal = document.getElementById("win-modal");
+  winModal.style.display = "block";
+  setTimeout(() => {
+    winModal.style.display = "none";
+    restartGame(); // Automatically restart the game
+  }, 3000); // Hide after 3 seconds
+}
+
 // Add event listeners to all cells (avoiding duplicates)
 document.querySelectorAll(".cell").forEach((cell) => {
   cell.addEventListener("click", () => {
@@ -105,26 +117,6 @@ function checkWinner() {
   }
 
   return board.includes(null) ? null : "Draw";
-}
-
-// Handle game over scenario
-function handleGameOver(winner) {
-  const modal = document.getElementById("win-modal");
-  const winMessage = document.getElementById("win-message");
-
-  if (winner === "Draw") {
-    winMessage.textContent = "It's a draw!";
-  } else {
-    winMessage.textContent = `${winner} wins!`;
-  }
-
-  modal.style.display = "block";
-}
-
-function closeModal() {
-  const modal = document.getElementById("win-modal");
-  modal.style.display = "none";
-  startNewGame(currentMode);
 }
 
 // Close the modal when the user clicks anywhere on the page
